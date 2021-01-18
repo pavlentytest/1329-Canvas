@@ -30,6 +30,8 @@ public class MyView extends View {
         canvas.drawRect(100,100,500,500,pensil);
         // CMYK
 
+      //  Bitmap.createScaledBitmap()
+
         Path path = new Path();
         path.moveTo(600,600);
         path.lineTo(700,700);
@@ -39,7 +41,14 @@ public class MyView extends View {
         canvas.drawPath(path,pensil);
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.images);
-        canvas.drawBitmap(bitmap,0,0,pensil);
+
+        //canvas.drawBitmap(bitmap,0,0,pensil);
+
+        canvas.rotate(45,200,200);
+        pensil.setTextSize(150);
+        canvas.drawText("Hello",50,100,pensil);
+        canvas.rotate(-45,200,200);
+
 
 
 
